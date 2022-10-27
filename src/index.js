@@ -12,19 +12,19 @@ root.render(
     <Router>
       <div className="flex gap-2">
         <span>
-          <Link to="/">App</Link>
+          <Link to="/1">App</Link>
         </span>
         <span>
-          <Link to="/Home">Home</Link>
+          <Link to="/Home/2">Home</Link>
         </span>
         <span>
-          <Link to="/About">About</Link>
+          <Link to="/About/3">About</Link>
         </span>
       </div>
       <Routes>
-        <Route path="/" element={<App />}></Route>
-        <Route path="/home" element={<Home />}></Route>
-        <Route path="/about" element={<About />}></Route>
+        <Route path="/:id" element={<App />}></Route>
+        <Route path="/home/:id" element={<Home />}></Route>
+        <Route path="/about/:id" element={<About />}></Route>
       </Routes>
     </Router>
   </React.StrictMode>
