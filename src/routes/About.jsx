@@ -1,9 +1,14 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import Layout from "../layouts/Layout";
 
 const About = () => {
-  const params = useParams();
-  return <div>about</div>;
+  return (
+    <Layout>
+      <div>about</div>
+      <div>1</div>
+      <div>2</div>
+    </Layout>
+  );
 };
 
 export default About;
