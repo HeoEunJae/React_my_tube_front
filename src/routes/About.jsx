@@ -5,8 +5,6 @@ const About = () => {
   return (
     <Layout>
       <div>about</div>
-      <div>1</div>
-      <div>2</div>
     </Layout>
   );
 };

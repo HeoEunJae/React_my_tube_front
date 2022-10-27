@@ -1,10 +1,13 @@
 import React from "react";
 import "./index.css";
-import { useParams } from "react-router-dom";
+import Layout from "./layouts/Layout";
 
 function App() {
-  const params = useParams();
-  return <div>App</div>;
+  return (
+    <Layout>
+      <div>App</div>
+    </Layout>
+  );
 }
 
 export default App;
