@@ -4,6 +4,7 @@ import About from "./../routes/About";
 
 const Header = () => {
   const navigate = useNavigate();
+  const isLogined = false;
   return (
     <header>
       <div className="flex justify-between navbar bg-base-100 border-b shadow-md ">
@@ -33,37 +34,51 @@ const Header = () => {
         {/* 검색창 끝*/}
         {/* 홈 버튼 로그아웃 버튼 등등 시작*/}
         <div>
-          <div className="dropdown dropdown-end">
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-24 rounded-full">
-                <img src="https://placeimg.com/192/192/people" alt="profile" />
-              </div>
-            </label>
-            <ul
-              tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-            >
-              <li>
-                <Link to="/">
-                  <div>Homepage</div>
-                </Link>
-              </li>
-              <li>
-                <Link to="/about">
-                  <div>about</div>
-                </Link>
-              </li>
-              <li>
-                <div
-                  onClick={() => {
-                    navigate("/");
-                  }}
-                >
-                  Logout
+          {isLogined ? (
+            <div className="dropdown dropdown-end">
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div className="w-24 rounded-full">
+                  <img
+                    src="https://placeimg.com/192/192/people"
+                    alt="profile"
+                  />
                 </div>
-              </li>
-            </ul>
-          </div>
+              </label>
+              <ul
+                tabIndex={0}
+                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <Link to="/">
+                    <div>Homepage</div>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/about">
+                    <div>about</div>
+                  </Link>
+                </li>
+                <li>
+                  <div
+                    onClick={() => {
+                      navigate("/");
+                    }}
+                  >
+                    Logout
+                  </div>
+                </li>
+              </ul>
+            </div>
+          ) : (
+            <div className="flex gap-4">
+              <div>
+                <Link to="/Signup">회원가입</Link>
+              </div>
+              <div className="mr-2">
+                <Link to="/Login">로그인</Link>
+              </div>
+            </div>
+          )}
         </div>
         {/* 홈 버튼 로그아웃 버튼 등등 끝*/}
       </div>
